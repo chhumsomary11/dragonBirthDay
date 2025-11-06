@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Harper's Birthday Invitation</title>
+		<link rel="stylesheet" href="claude.css" />
+	</head>
+	<body>
+		<!-- Background floating clouds -->
+		<div class="bg-clouds">
+			<div class="bg-cloud"></div>
+			<div class="bg-cloud"></div>
+			<div class="bg-cloud"></div>
+			<div class="bg-cloud"></div>
+		</div>
+
+		<!-- Sparkles -->
+		<div class="sparkles" id="sparkles"></div>
+
+		<div class="container">
+			<div class="envelope" id="envelope">
+				<div class="envelope-flap"></div>
+				<div class="seal">
+					<div class="seal-text">Tap to<br />Open</div>
+				</div>
+			</div>
+
+			<div class="tap-hint" id="tapHint">✨ Tap the seal to open ✨</div>
+
+			<div class="card">
+				<div class="card-header">
+					<div class="clouds">
+						<div class="cloud"></div>
+						<div class="cloud"></div>
+						<div class="cloud"></div>
+					</div>
+					<div class="dragon-image">
+						<!-- Replace this div with your dragon image -->
+						<!-- To add your image, replace the entire dragon-placeholder div with:
+                         <img src="YOUR_IMAGE_URL_HERE" alt="Dragon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;"> -->
+						<!-- <div class="dragon-placeholder">🐉</div> -->
+						<img
+							src="prettyDragon.jpg"
+							alt="Dragon"
+							style="
+								width: 100%;
+								height: 100%;
+								object-fit: contain;
+								border-radius: 50%;
+							"
+						/>
+					</div>
+					<div class="title">Calling all</div>
+					<div class="main-title">Dragons</div>
+					<div class="subtitle">Join us to celebrate</div>
+					<div class="name">Harper's</div>
+					<div class="subtitle">FIFTH BIRTHDAY!</div>
+				</div>
+
+				<div class="card-body">
+					<div class="date-container">
+						<div class="date-item">
+							<div class="date-label">Month</div>
+							<div class="date-value">AUGUST</div>
+						</div>
+						<div class="date-divider"></div>
+						<div class="date-item">
+							<div class="date-label">Day</div>
+							<div class="date-value">15</div>
+						</div>
+						<div class="date-divider"></div>
+						<div class="date-item">
+							<div class="date-label">Time</div>
+							<div class="date-value">1 PM</div>
+						</div>
+					</div>
+
+					<div class="location">
+						<div class="location-title">Location</div>
+						<div class="location-text">
+							The Bradley Home<br />
+							1234 Party Lane<br />
+							Phoenix, AZ
+						</div>
+					</div>
+
+					<div class="button-container">
+						<a
+							href="sms:123-456-7890?body=I%20will%20be%20attending%20Harper's%20birthday%20party!"
+							class="btn btn-rsvp"
+							>RSVP</a
+						>
+						<a
+							href="https://maps.google.com/?q=1234+Party+Lane+Phoenix+AZ"
+							target="_blank"
+							class="btn btn-map"
+							>📍 Map</a
+						>
+					</div>
+				</div>
+
+				<div class="footer">RSVP: 123-456-7890</div>
+			</div>
+		</div>
+
+		<script>
+			// Open envelope
+			const envelope = document.getElementById("envelope");
+			envelope.addEventListener("click", function () {
+				this.classList.add("opened");
+			});
+
+			// Create magical sparkles
+			const sparklesContainer = document.getElementById("sparkles");
+			for (let i = 0; i < 50; i++) {
+				const sparkle = document.createElement("div");
+				sparkle.className = "sparkle";
+				sparkle.style.left = Math.random() * 100 + "%";
+				sparkle.style.top = Math.random() * 100 + "%";
+				sparkle.style.animationDelay = Math.random() * 3 + "s";
+				sparklesContainer.appendChild(sparkle);
+			}
+		</script>
+	</body>
+</html>
